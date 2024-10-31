@@ -1,9 +1,17 @@
 import express, { Request, Response } from "express";
 
-const app = express();
+
+export const app = express();
+
+const mobs = [{
+  name: "Kåda"
+},
+{name: "Spicy"},
+{name: "Infinågot"}];
+
 
 app.get("/api/v1/mobs", (req: Request, resp: Response) => {
-  resp.status(200).json([]);
+  resp.status(200).json(mobs);
 });
 
 app.post("/api/v1/mobs/", (req: Request, resp: Response) => {
